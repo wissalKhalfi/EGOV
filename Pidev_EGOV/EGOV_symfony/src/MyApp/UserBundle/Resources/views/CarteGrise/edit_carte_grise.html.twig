@@ -1,0 +1,25 @@
+{% extends "MyAppUserBundle:Visitor:edit_carte_grise.html.twig" %}
+
+{% block content %}
+    <center>
+
+{% block body -%}
+    <div class="span4 offset2">
+                        <h4>Modifier Carte Grise</h4>
+                        <form action="{{path('edit_carte_grise')}}" method="POST"> 
+                            {{ form_widget(form) }}
+                            
+                        Nom:{{user.nom}}<br>
+                        Prenom:{{user.prenom}}<br>
+                      
+                        Adresse:{{user.username}}<br>
+                        Num cin :{{user.email}}<br>
+
+                               
+
+                            <button class="btn btn-primary" type="submit">Modifier</button>
+                        </form>
+                    </div>
+{% endblock %}
+    </center>
+    {% endblock %}

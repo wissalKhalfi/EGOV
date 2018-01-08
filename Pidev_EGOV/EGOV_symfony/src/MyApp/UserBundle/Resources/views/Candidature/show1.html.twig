@@ -1,0 +1,39 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Candidature</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Idcandidature</th>
+                <td>{{ entity.idCandidature }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ entity.etat }}</td>
+            </tr>
+            <tr>
+                <th>Candidat</th>
+                <td>{{ entity.candidat }}</td>
+            </tr>
+            <tr>
+                <th>Entreprise</th>
+                <td>{{ entity.entreprise }}</td>
+            </tr>
+            <tr>
+                <th>CV</th>
+                <td>{{ entity.cv }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('e-job') }}">
+            Back to the list
+        </a>
+    </li>
+    
+</ul>
+{% endblock %}

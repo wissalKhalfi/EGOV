@@ -1,0 +1,62 @@
+{% extends "::base.html.twig" %}
+
+{% block body -%}
+    <h1>Les Coordonnées de votre Contrat de mariage</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>id contrat</th>
+                <td>{{ contratmariage.id_contrat }}</td>
+            </tr>
+            <tr>
+                <th>date de mariage</th>
+                <td>{{ contratmariage.date_mariage|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>id epoux</th>
+                <td>{{ contratmariage.id_epoux }}</td>
+            </tr>
+            <tr>
+                <th>id epouse</th>
+                <td>{{ contratmariage.id_epouse }}</td>
+            </tr>
+            <tr>
+                <th>validation</th>
+                <td>{{ contratmariage.validation }}</td>
+            </tr>
+        
+          <tr>
+                <th>nom</th>
+                <td>{{ contratmariage.utilisateur.nom }}</td>
+            </tr>
+            
+              <tr>
+                <th>prenom</th>
+                <td>{{ contratmariage.utilisateur.prenom }}</td>
+            </tr>
+            
+              <tr>
+                <th>date de naissance</th>
+                <td>{{ contratmariage.utilisateur.dateNaissance|date('Y-m-d') }}</td>
+            </tr>
+            
+              <tr>
+                <th>lieu de naissance</th>
+                <td>{{ contratmariage.utilisateur.lieuNaissance }}</td>
+            </tr>
+            
+              <tr>
+                <th>adresse</th>
+                <td>{{ contratmariage.utilisateur.adresse }}</td>
+            </tr>
+            
+             <tr>
+                <th>num cin </th>
+                <td>{{ contratmariage.utilisateur.numCin }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+       
+{% endblock %}

@@ -1,0 +1,36 @@
+b3:
+    path:     /
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:indexB3" }
+ 
+b3_show:
+    path:     /afficher/{numCin}
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:AfficherB3" }
+    
+b3_admin:
+    path:     /admin
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:B3Admin" }
+
+b3_ajout_actes:
+    path:     /ajout_acte
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:AjouterActeJuridique" }
+
+b3_liste_actes:
+    path:     /liste_actes
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:ListerActeJuridique" }
+
+b3_ajouter_liste_actes:
+    path:     /liste_actes/{id}/affecter
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:AjouterCondamnes" }
+
+b3_condamner:
+    path:     /liste_actes/{id}/affecter/{cin}
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:Condamner" }
+
+b3_liste_acte_condamnes:
+    path:     /liste_acte_condamnes
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:ListerActeCondamne" }
+    
+b3_recherche_par_cin:
+    path:     /recherche_cin
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:ChercherActeParCitoyen" }
+    

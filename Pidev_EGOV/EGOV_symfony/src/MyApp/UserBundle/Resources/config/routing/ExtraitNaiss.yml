@@ -1,0 +1,48 @@
+ExtraitNaiss:
+    path:     /
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:indexEN" }
+    
+ExtraitNaiss_ajout:
+    path:     /ajout
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:AjoutExtraitNaissance" }
+    
+ExtraitNaiss_liste:
+    path:     /listeEN
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:ListerEN" }
+
+ExtraitNaiss_show:
+    path:     /afficher/{id}
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:AfficherEn" }
+    
+ExtraitNaiss_admin:
+    path:     /admin
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:ENAdmin" }
+
+ExtraitNaiss_demandes:
+    path:     /demandesEN
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:ListerDemandesEN" }
+    
+ExtraitNaiss_validation_demandes:
+    path:     /demandesEN/validation/{id}
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:ValidationDemandesEN" }
+
+ExtraitNaiss_validation_demandes_accepted:
+    path:     /demandesEN/validation/{id}/accepted
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:AccepterDemandesEN" }
+    
+ExtraitNaiss_validation_demandes_denied:
+    path:     /demandesEN/validation/{id}/denied
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:RefuserDemandesEN" }
+
+ExtraitNaiss_reponse_demande:
+    path:     /demandesEN/{id}/reponse
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:ReponseDemandeENutilisateur" }
+    
+ExtraitNaiss_impression:
+    path:     /EN/{id}
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:imprimerEN" }
+    
+ExtraitNaiss_chart_sexe:
+    path:     /StatSexe
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:SexePieEN" }
+    

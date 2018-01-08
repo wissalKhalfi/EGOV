@@ -1,0 +1,109 @@
+<?php
+
+namespace MyApp\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SecuriteSociale
+ *
+ * @ORM\Table(name="securite_sociale", uniqueConstraints={@ORM\UniqueConstraint(name="id_sc", columns={"id_sc"}), @ORM\UniqueConstraint(name="proprietaire_2", columns={"proprietaire"}), @ORM\UniqueConstraint(name="conjoint_2", columns={"conjoint"})}, indexes={@ORM\Index(name="proprietaire", columns={"proprietaire"}), @ORM\Index(name="conjoint", columns={"conjoint"})})
+ * @ORM\Entity
+ */
+class SecuriteSociale
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="proprietaire", type="string", length=8, nullable=false)
+     */
+    private $proprietaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="conjoint", type="string", length=8, nullable=false)
+     */
+    private $conjoint;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbre_enfants", type="integer", nullable=false)
+     */
+    private $nbreEnfants;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="enfant1", type="string", length=30, nullable=false)
+     */
+    private $enfant1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="enfant2", type="string", length=30, nullable=false)
+     */
+    private $enfant2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="enfant3", type="string", length=30, nullable=false)
+     */
+    private $enfant3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="enfant4", type="string", length=30, nullable=false)
+     */
+    private $enfant4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Enfant5", type="string", length=30, nullable=false)
+     */
+    private $enfant5;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="enfant6", type="string", length=30, nullable=false)
+     */
+    private $enfant6;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_delivrence_csc", type="date", nullable=false)
+     */
+    private $dateDelivrenceCsc;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_validite_csc", type="date", nullable=false)
+     */
+    private $dateValiditeCsc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="regime", type="string", length=20, nullable=false)
+     */
+    private $regime;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_sc", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idSc;
+
+
+}

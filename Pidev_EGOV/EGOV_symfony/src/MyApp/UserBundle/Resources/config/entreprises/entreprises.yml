@@ -1,0 +1,40 @@
+entreprises:
+    path:     /index1
+    defaults: { _controller: "MyAppUserBundle:Entreprises:index" }
+    
+entreprise_abouttn:
+    path:     /abouttn
+    defaults: { _controller: "MyAppUserBundle:Entreprises:abouttn" } 
+    
+entreprise_service:
+    path:     /service
+    defaults: { _controller: "MyAppUserBundle:Entreprises:service" }
+    
+entreprise_estudent:
+    path:     /e-student
+    defaults: { _controller: "MyAppUserBundle:Entreprises:estudent" }
+    
+entreprise_eroute:
+    path:     /e-route
+    defaults: { _controller: "MyAppUserBundle:Entreprises:eroute" }
+    
+entreprise_ecitoyennite:
+    path:     /e-citoyennite
+    defaults: { _controller: "MyAppUserBundle:Entreprises:ecitoyennite" }
+    
+entreprise_ecitoyenniteplus:
+    path:     /e-citoyennite+
+    defaults: { _controller: "MyAppUserBundle:Entreprises:ecitoyenniteplus" }
+    
+entreprise_contact:
+    path:     /contact
+    defaults: { _controller: "MyAppUserBundle:Entreprises:contact" }
+
+entreprise_news:
+    path:     /news
+    defaults: { _controller: "MyAppUserBundle:Entreprises:news" }
+    
+entreprise_ejob:
+    path:     /e_jobe
+    defaults: { _controller: "MyAppUserBundle:Entreprises:ejob" }
+

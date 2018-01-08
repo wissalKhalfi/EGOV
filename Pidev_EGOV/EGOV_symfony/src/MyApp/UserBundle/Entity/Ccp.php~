@@ -1,0 +1,137 @@
+<?php
+
+namespace MyApp\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Ccp
+ *
+ * @ORM\Table(name="ccp")
+ * @ORM\Entity
+ */
+class Ccp
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="code_ccp", type="integer", nullable=false)
+     */
+    private $codeCcp;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="solde_actuel", type="integer", nullable=true)
+     */
+    private $soldeActuel;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_dernier_retirement", type="date", nullable=true)
+     */
+    private $dateDernierRetirement;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dernier_retirement", type="integer", nullable=true)
+     */
+    private $dernierRetirement;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_creation", type="date", nullable=true)
+     */
+    private $dateCreation;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_dernier_versement", type="date", nullable=true)
+     */
+    private $dateDernierVersement;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dernier_versement", type="integer", nullable=true)
+     */
+    private $dernierVersement;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="validator_creation", type="integer", nullable=true)
+     */
+    private $validatorCreation;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="validator_recuperation", type="integer", nullable=true)
+     */
+    private $validatorRecuperation;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="validator_changement", type="integer", nullable=true)
+     */
+    private $validatorChangement;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="validator_renouvellement", type="integer", nullable=true)
+     */
+    private $validatorRenouvellement;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="validator_blockage", type="integer", nullable=true)
+     */
+    private $validatorBlockage;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="validator_deblockage", type="integer", nullable=true)
+     */
+    private $validatorDeblockage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reponseq1", type="string", length=30, nullable=true)
+     */
+    private $reponseq1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reponseq2", type="string", length=30, nullable=true)
+     */
+    private $reponseq2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reponseq3", type="string", length=30, nullable=true)
+     */
+    private $reponseq3;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="num_ccp", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $numCcp;
+
+
+}

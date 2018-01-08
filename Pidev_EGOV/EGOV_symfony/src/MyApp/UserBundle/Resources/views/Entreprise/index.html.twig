@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Entreprise list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Codefiscal</th>
+                <th>Adresse</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Pwdentreprise</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('entreprise_show', { 'id': entity.codeFiscal }) }}">{{ entity.codeFiscal }}</a></td>
+                <td>{{ entity.adresse }}</td>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.pwdEntreprise }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('entreprise_show', { 'id': entity.codeFiscal }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('entreprise_edit', { 'id': entity.codeFiscal }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('entreprise_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

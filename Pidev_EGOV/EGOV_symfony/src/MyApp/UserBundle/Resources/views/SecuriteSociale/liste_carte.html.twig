@@ -1,0 +1,85 @@
+{% extends "EGOVVisitorBundle:Visitor:lister_carte.html.twig" %}
+
+{% block content %}
+
+
+
+
+    {% block body -%}
+        <div class="container">
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Num cin</th>
+                    <th>Num passeport</th>
+                    <th>Validation</th>
+                    <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if securitesociale|length != 0 %}
+
+                        {% for s in securitesociale %}
+
+
+                        {#    <tr>
+                            <td>{% if s.utilisateur.nom is defined %}
+                                {{ s.utilisateur.nom }}
+                                {% endif %}</td>
+                                <td>{% if s.utilisateur.prenom is defined %}
+                                    {{ s.utilisateur.prenom }}
+                                    {% endif %}</td>
+                                    <td>{% if s.utilisateur.numCin is defined %}
+                                        {{ s.utilisateur.numCin }}
+                                        {% endif %}</td>
+                                        <td>{% if s.utilisateur.idSC is defined %}
+                                            {{ s.utilisateur.idSC }}
+                                            {% endif %}</td>
+                                            <td>{% if s.utilisateur.proprietaire is defined %}
+                                                {{ s.utilisateur.proprietaire }}
+                                                {% endif %}</td>
+                                                <td>{% if s.utilisateur.conjoint is defined %}
+                                                    {{ s.utilisateur.conjoint }}
+                                                    {% endif %}</td>
+                                                    <td>{{s.validation}}</td>
+
+                                                    <td><a class="btn btn-sm btn-default edit_link" href="{{ path('admin_show_carte', { 'idSC' : s.idSC }) }}"><i
+                                                                class="fa fa-download"></i>show</a>
+
+                                                        <a class="btn btn-sm btn-default edit_link" href="{{ path('valider_carte', { 'idSC' : s.idSC }) }}"><i
+                                                                class="fa fa-download"></i>Valider</a>
+                                                            {% if  s.validation=="non validé" %} 
+
+                                                            <a class="btn btn-sm btn-default edit_link" href="{{ path('supprimer_carte', { 'idSC' : s.idSC }) }}"><i
+                                                                    class="fa fa-download"></i>annuler</a>
+
+                                                        {%endif%}
+                                                    </td>
+
+
+                                                    </tr> #}
+                                                    {%endfor%}
+                                                        {%else%}
+                                                            <tr><td colspan="5" >  Aucune carte ! </td><td></td></tr>
+                                                            {%endif%}
+
+
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                                <br/>
+                                                                <br/>
+                                                                <br/>
+
+
+
+                                                                <center><a class="btn btn-sm btn-default edit_link" href="{{ path('_graphe_pie') }}"><i
+                                                            class="fa fa-download"></i>Voir les statistiques</a><center/>
+
+                                                    {% endblock %}
+
+                                                        {% endblock %}

@@ -1,0 +1,73 @@
+{% extends "::base.html.twig" %}
+
+
+
+
+{% block body -%}
+<div class="container">
+    
+    
+        <form method="POST" action="{{path ('permis_rech')}}" >
+        <div class="input-append">
+
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control" placeholder="Entrer le Code du Permis" numPermis="numPermis" name="numPermis">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                   Rechercher
+                                </button>
+                            </span>
+            </div>
+
+        </div>
+
+    </form>
+          
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Email</th>
+         <th>Num permis</th>
+        <th>Validation</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% if permis|length != 0 %}
+       
+        {% for p in permis %}
+      <tr>
+          {%if p.utilisateur%}
+        <td>{{p.utilisateur.nom}}</td>
+        <td>{{p.utilisateur.prenom}}</td>
+        <td>{{p.utilisateur.email}}</td>
+         <td>{{p.numPermis}}</td>
+        <td>{{p.validation}}</td>
+        
+        <td><a class="btn btn-sm btn-default edit_link" href="{{ path('show_permis_admin', { 'numPermis' : p.numPermis }) }}"><i
+                class="fa fa-download"></i>show</a>
+             
+                <a class="btn btn-sm btn-default edit_link" href="{{ path('valider_permis', { 'numPermis' : p.numPermis }) }}"><i
+                class="fa fa-download"></i>Valider</a>
+                {% if  p.validation=="non validé" %} 
+                   
+                <a class="btn btn-sm btn-default edit_link" href="{{ path('supprimer_permis', { 'numPermis' : p.numPermis }) }}"><i
+                class="fa fa-download"></i>annuler</a>
+                
+          {%endif%}
+        </td>
+        {%endif%}
+     
+      </tr> 
+        {%endfor%}
+        {%else%}
+            <tr><td colspan="5" >  Aucun Permis ! </td><td></td></tr>{%endif%}
+      
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+<?php
+
+namespace MyApp\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Diplome
+ *
+ * @ORM\Table(name="diplome")
+ * @ORM\Entity
+ */
+class Diplome
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Text", type="string", length=255, nullable=false)
+     */
+    private $text;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome", type="string", length=12, nullable=false)
+     */
+    private $nome;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

@@ -1,0 +1,30 @@
+{% extends "MyAppUserBundle:Visitor:ajout_carte_grise.html.twig" %}
+
+{% block content %}
+    {%if app.user%}
+    <center>
+
+{% block body -%}
+    <div class="span4 offset2">
+                        <h4>Ajouter Carte Grise</h4>
+                        <form action="{{path('add_carte_grise')}}" method="POST"> 
+                            {{ form_widget(form) }}
+                            
+                        Nom:{{user.nom}}<br>
+                        Prenom:{{user.prenom}}<br>
+                        User name:{{user.username}}<br>
+                       
+
+                               
+
+                            <button class="btn btn-primary" type="submit">Ajouter</button>
+                        </form>
+                    </div>
+
+{% endblock %}
+</center>
+{%else%}
+    <br><br><br>
+    <center style= "color:red"><B> Connectez vous s'il vous plait avant!</B></center>
+    {%endif%}
+{% endblock %}

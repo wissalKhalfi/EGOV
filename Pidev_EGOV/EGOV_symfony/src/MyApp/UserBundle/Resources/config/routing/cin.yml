@@ -1,0 +1,47 @@
+cin:
+    path:     /
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:indexCin" }
+ 
+cin_ajout:
+    path:     /ajout/{id}
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:AjouterCin" }
+
+cin_show:
+    path:     /afficher/{id}
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:AfficherCin" }
+
+cin_recherche: 
+    path:     /recherche/{nom}
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:RechCin" }
+
+cin_admin:
+    path:     /admin
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:CinAdmin" }
+    
+cin_liste:
+    path:     /listeCin
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:ListerCin" }
+
+cin_demandes:
+    path:     /demandesCin
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:ListerDemandesCin" }
+
+cin_validation_demandes:
+    path:     /demandesCin/validation/{id}
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:ValidationDemandesCin" }
+
+cin_image_route:
+    pattern: /images/{id}
+    defaults: {_controller: "MyAppUserBundle:Utilisateur:photo"}
+ 
+Cin_validation_demandes_accepted:
+    path:     /demandesCin/validation/{id}/accepted
+    defaults: {_controller: "MyAppUserBundle:Utilisateur:AccepterDemandesCin"}
+       
+Cin_validation_demandes_denied:
+    path:     /demandesCin/validation/{id}/denied
+    defaults: {_controller: "MyAppUserBundle:Utilisateur:RefuserDemandesCin"}
+
+cin_map:
+    path:     /map
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:Map" }

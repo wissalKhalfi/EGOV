@@ -1,0 +1,96 @@
+{% extends 'MyAppUserBundle:wissal:baseWissal.html.twig' %}
+
+{% block content %}
+<section id="headline">
+    <div class="container  text-center">
+        <h3>Extraits de naissance</h3>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container ">
+        <div class="col-lg-12 __web-inspector-hide-shortcut__">
+            <section class="panel">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2><strong>Extraits de naissance</strong></h2>
+                    </header>
+
+                    <div class="panel-body">
+                        <form>
+
+                            <table class="table table-striped" id="table-example">
+                                <thead>
+
+                                    <tr>
+
+                                        <th class="text-center">Id demande</th>	
+                                        <td> {{ext.iduti}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th  class="text-center">Nom</th>
+                                        <td> {{ext.nom}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">Prenom</th>
+                                        <td> {{ext.prenom}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">Date de naissance</th>
+                                        <td> {{ext.dateNaissance|date('Y-m-d')}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">Sexe</th>
+                                        <td> {{ext.sexe}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">Prenom pere </th>
+                                        <td> {{ext.prenomPere}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">Nom pere</th>
+                                        <td> {{ext.nomPere}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">Prenom mère</th>
+                                        <td> {{ext.prenomMere}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">Nom mère</th>
+                                        <td> {{ext.nomMere}} </td>
+                                    </tr>
+                                    <tr> 
+                                        <td align="center">
+                                            <button class="btn" type="button" type="submit" value="Valider" >
+                                                <a href="{{ path ("ExtraitNaiss_validation_demandes_accepted", {id:ext.iduti})}}">Valider </a>                                               
+                                            </button> 
+                                        </td>
+                                        <td align="center"> 
+                                            <button class="btn" type="button" type="submit" value="Refuser">
+                                                <a href="{{ path ("ExtraitNaiss_validation_demandes_denied", {id:ext.iduti})}}">Refuser </a>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+
+                                </thead>
+
+
+                            </table>
+                        </form>
+                    </div>
+                </section>
+
+            </section>
+
+
+
+
+
+
+
+        </div>		
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Utilisateur list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Numcin</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Type</th>
+                <th>Datenaissance</th>
+                <th>Lieunaissance</th>
+                <th>Statutsocial</th>
+                <th>Nompere</th>
+                <th>Prenompere</th>
+                <th>Nommere</th>
+                <th>Prenommere</th>
+                <th>Sexe</th>
+                <th>Adresse</th>
+                <th>Datedelivrencecin</th>
+                <th>Photo</th>
+                <th>Profession</th>
+                <th>Empreinte</th>
+                <th>Codeempreinte</th>
+                <th>Idagent</th>
+                <th>Listesactes</th>
+                <th>Passeport</th>
+                <th>Permis</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('utilisateur_show', { 'id': entity.numCin }) }}">{{ entity.numCin }}</a></td>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.prenom }}</td>
+                <td>{{ entity.type }}</td>
+                <td>{% if entity.dateNaissance %}{{ entity.dateNaissance|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.lieuNaissance }}</td>
+                <td>{{ entity.statutSocial }}</td>
+                <td>{{ entity.nomPere }}</td>
+                <td>{{ entity.prenomPere }}</td>
+                <td>{{ entity.nomMere }}</td>
+                <td>{{ entity.prenomMere }}</td>
+                <td>{{ entity.sexe }}</td>
+                <td>{{ entity.adresse }}</td>
+                <td>{% if entity.dateDelivrenceCin %}{{ entity.dateDelivrenceCin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.photo }}</td>
+                <td>{{ entity.profession }}</td>
+                <td>{{ entity.empreinte }}</td>
+                <td>{{ entity.codeEmpreinte }}</td>
+                <td>{{ entity.idAgent }}</td>
+                <td>{{ entity.listesActes }}</td>
+                <td>{{ entity.passeport }}</td>
+                <td>{{ entity.permis }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('utilisateur_show', { 'id': entity.numCin }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('utilisateur_edit', { 'id': entity.numCin }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('utilisateur_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

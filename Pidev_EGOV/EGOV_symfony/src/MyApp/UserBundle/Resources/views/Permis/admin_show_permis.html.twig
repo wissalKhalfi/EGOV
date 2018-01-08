@@ -1,0 +1,55 @@
+{% extends "::base.html.twig" %}
+
+{% block body -%}
+    <h1>Permis</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>numPermis</th>
+                <td>{{ permis.numPermis }}</td>
+            </tr>
+            <tr>
+                <th>dateCreationPermis</th>
+                <td>{{ permis.dateCreationPermis|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ permis.categoriePermis }}</td>
+            </tr>
+            <tr>
+                <th>dateValiditePermis</th>
+                <td>{{ permis.dateValiditePermis|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>validation</th>
+                <td>{{ permis.validation }}</td>
+            </tr>
+            <tr>
+                <th>nom</th>
+                <td>{{ permis.utilisateur.nom }}</td>
+            </tr>
+            
+              <tr>
+                <th>prenom</th>
+                <td>{{ permis.utilisateur.prenom }}</td>
+            </tr>
+            
+              
+            
+           
+            
+              <tr>
+                <th>Email</th>
+                <td>{{ permis.utilisateur.email }}</td>
+            </tr>
+            
+            <tr><th></th><td>  <br>
+         <a class="btn btn-primary" href="{{ path('liste_permis') }}">
+                         liste permis</a></td></tr>
+        </tbody>
+        
+    </table>
+          
+       
+{% endblock %}

@@ -1,0 +1,53 @@
+<?php
+
+namespace MyApp\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Candidature
+ *
+ * @ORM\Table(name="candidature")
+ * @ORM\Entity
+ */
+class Candidature
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat", type="string", length=200, nullable=false)
+     */
+    private $etat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="candidat", type="string", length=8, nullable=false)
+     */
+    private $candidat;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="entreprise", type="integer", nullable=false)
+     */
+    private $entreprise;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cv", type="string", length=250, nullable=false)
+     */
+    private $cv;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_candidature", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCandidature;
+
+
+}

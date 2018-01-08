@@ -1,0 +1,64 @@
+<?php
+
+namespace MyApp\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Permis
+ *
+ * @ORM\Table(name="permis")
+ * @ORM\Entity
+ */
+class Permis
+{
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="numPermis", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $numPermis;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_creation_permis", type="date", nullable=false)
+     */
+    private $dateCreationPermis;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="categorie_permis", type="string", length=10, nullable=false)
+     */
+    private $categoriePermis;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_validite_permis", type="date", nullable=false)
+     */
+    private $dateValiditePermis;
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="validation", type="string", length=10, nullable=true)
+     */
+    private $validation;
+
+   /**
+     * @ORM\OneToOne(targetEntity="User" ,inversedBy="permis", cascade={"persist"})
+     * @ORM\JoinColumn(name="numCinUtilisateur", referencedColumnName="id")
+     */
+    private $utilisateur;
+
+    
+     
+   
+
+    
+   
+}

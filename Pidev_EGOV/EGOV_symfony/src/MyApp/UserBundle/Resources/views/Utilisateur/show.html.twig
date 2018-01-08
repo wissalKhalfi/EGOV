@@ -1,0 +1,112 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Utilisateur</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Numcin</th>
+                <td>{{ entity.numCin }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ entity.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ entity.type }}</td>
+            </tr>
+            <tr>
+                <th>Datenaissance</th>
+                <td>{{ entity.dateNaissance|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Lieunaissance</th>
+                <td>{{ entity.lieuNaissance }}</td>
+            </tr>
+            <tr>
+                <th>Statutsocial</th>
+                <td>{{ entity.statutSocial }}</td>
+            </tr>
+            <tr>
+                <th>Nompere</th>
+                <td>{{ entity.nomPere }}</td>
+            </tr>
+            <tr>
+                <th>Prenompere</th>
+                <td>{{ entity.prenomPere }}</td>
+            </tr>
+            <tr>
+                <th>Nommere</th>
+                <td>{{ entity.nomMere }}</td>
+            </tr>
+            <tr>
+                <th>Prenommere</th>
+                <td>{{ entity.prenomMere }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ entity.sexe }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ entity.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Datedelivrencecin</th>
+                <td>{{ entity.dateDelivrenceCin|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ entity.photo }}</td>
+            </tr>
+            <tr>
+                <th>Profession</th>
+                <td>{{ entity.profession }}</td>
+            </tr>
+            <tr>
+                <th>Empreinte</th>
+                <td>{{ entity.empreinte }}</td>
+            </tr>
+            <tr>
+                <th>Codeempreinte</th>
+                <td>{{ entity.codeEmpreinte }}</td>
+            </tr>
+            <tr>
+                <th>Idagent</th>
+                <td>{{ entity.idAgent }}</td>
+            </tr>
+            <tr>
+                <th>Listesactes</th>
+                <td>{{ entity.listesActes }}</td>
+            </tr>
+            <tr>
+                <th>Passeport</th>
+                <td>{{ entity.passeport }}</td>
+            </tr>
+            <tr>
+                <th>Permis</th>
+                <td>{{ entity.permis }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('utilisateur') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('utilisateur_edit', { 'id': entity.numCin }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

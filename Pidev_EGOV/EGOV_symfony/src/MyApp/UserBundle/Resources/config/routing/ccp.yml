@@ -1,0 +1,48 @@
+ccp:
+    path:     /
+    defaults: { _controller: "MyAppUserBundle:Ccp:index" }
+    
+ccp_acceuil:
+    path:     /acceuil
+    defaults: { _controller: "MyAppUserBundle:Ccp:acceuil" }
+ccp_infoccp:
+    path:     /infoccp
+    defaults: { _controller: "MyAppUserBundle:Ccp:infoccp" }
+ccp_formccp:
+    path:     /formccp
+    defaults: { _controller: "MyAppUserBundle:Ccp:formccp" }
+ccp_authccp:
+    path:     /authccp
+    defaults: { _controller: "MyAppUserBundle:Ccp:authccp" }
+
+ccp_show:
+    path:     /{id}/show
+    defaults: { _controller: "MyAppUserBundle:Ccp:show" }
+
+ccp_new:
+    path:     /new
+    defaults: { _controller: "MyAppUserBundle:Ccp:new" }
+
+ccp_create:
+    path:     /create
+    defaults: { _controller: "MyAppUserBundle:Ccp:create" }
+    methods:  POST
+
+ccp_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MyAppUserBundle:Ccp:edit" }
+ccp_supprimer:
+    path:     /{id}/supprimerccp
+    defaults: { _controller: "MyAppUserBundle:Ccp:supprimerccp" }
+ccp_listedemandeajoutc:
+    path:     /listedemandeajoutc
+    defaults: { _controller: "MyAppUserBundle:Ccp:listedemandeajoutc" }
+ccp_update:
+    path:     /{id}/update
+    defaults: { _controller: "MyAppUserBundle:Ccp:update" }
+    methods:  [POST, PUT]
+
+ccp_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MyAppUserBundle:Ccp:delete" }
+    methods:  [POST, DELETE]

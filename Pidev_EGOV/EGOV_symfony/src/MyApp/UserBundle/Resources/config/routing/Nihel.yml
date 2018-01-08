@@ -1,0 +1,105 @@
+visitor_menu_passeport:
+    path:     /menuPasseport
+    defaults: { _controller: "MyAppUserBundle:Visitor:menuPasseport" }
+    
+visitor_menu_contrat:
+    path:     /menuContrat
+    defaults: { _controller: "MyAppUserBundle:Visitor:menuContrat" }
+       
+visitor_menu_carte:
+ path:     /menuCarte
+ defaults: { _controller: "MyAppUserBundle:Visitor:menuCarte" }
+ 
+add_passeport:
+    path:     /add_passeport
+    defaults: { _controller: MyAppUserBundle:Passeport:add_passeport}
+    
+liste_passeport:
+    path:     /liste_passeport
+    defaults: { _controller: MyAppUserBundle:AdminPasseport:liste_passeport}
+    
+show_passeport:
+    path:     /show_passeport
+    defaults: { _controller: MyAppUserBundle:Passeport:show_passeport}
+    
+    
+show_passeport_admin:
+    path:     /show_passeport/{numPasseport}
+    defaults: { _controller: MyAppUserBundle:AdminPasseport:show_passeport}
+    
+edit_passeport_user:
+    path:     /edit_passeport_user
+    defaults: { _controller: MyAppUserBundle:Passeport:edit_passeport_user}
+    
+valider_passeport:
+    path:     /valider_passeport/{numPasseport}
+    defaults: { _controller: MyAppUserBundle:AdminPasseport:valider_passeport}
+     
+     
+supprimer_passeport:
+    path:     /supprimer_passeportt/{numPasseport}
+    defaults: { _controller: MyAppUserBundle:AdminPasseport:supprimer_passeport}
+    
+     
+add_contratmariage:
+    path:     /add_contrat
+    defaults: { _controller: MyAppUserBundle:ContratMariage:add_contratmariage}
+
+show_contratmariage:
+    path:     /show_contrat
+    defaults: { _controller: MyAppUserBundle:ContratMariage:show_ContratMariage}
+    
+edit_contrat_user:
+    path:     /edit_contrat
+    defaults: { _controller: MyAppUserBundle:ContratMariage:edit_contrat_user}
+     
+admin_show_contrat:
+    path:     /show_contrat/{id_contrat}
+    defaults: { _controller: MyAppUserBundle:AdminContratMariage:show_contrat}
+    
+liste_contrat:
+    path:     /liste_contrat
+    defaults: { _controller: MyAppUserBundle:AdminContratMariage:liste_contrat}
+    
+    
+valider_contrat:
+    path:     /valider_contrat/{id_contrat}
+    defaults: { _controller: MyAppUserBundle:AdminContratMariage:valider_contrat}
+    
+supprimer_contrat:
+    path:     /supprimer_contrat/{id_contrat}
+    defaults: { _controller: MyAppUserBundle:AdminContratMariage:supprimer_contratt}
+    
+_graphe_pie:
+    path:     /pie
+    defaults: { _controller: MyAppUserBundle:Graphe:chartPie }
+    
+    
+add_carte:
+    path:     /add_carte
+    defaults: { _controller: MyAppUserBundle:SecuriteSociale:add_carte}
+    
+   
+show_carte:
+    path:     /show_carte
+    defaults: { _controller: MyAppUserBundle:SecuriteSociale:show_carte}
+
+edit_carte_user:
+    path:     /edit_carte_user
+    defaults: { _controller: MyAppUserBundle:SecuriteSociale:edit_carte_user} 
+    
+admin_show_carte:
+    path:     /show_carte/{idSC}
+    defaults: { _controller: MyAppUserBundle:AdminSecuriteSociale:show_carte}
+    
+liste_carte:
+    path:     /liste_carte
+    defaults: { _controller: MyAppUserBundle:AdminSecuriteSociale:liste_carte}
+
+valider_carte:
+    path:     /valider_carte/{idSC}
+    defaults: { _controller: MyAppUserBundle:AdminSecuriteSociale:valider_carte}
+    
+supprimer_carte:
+    path:     /supprimer_carte/{idSC}
+    defaults: { _controller: MyAppUserBundle:AdminSecuriteSociale:supprimer_carte}

@@ -1,0 +1,104 @@
+{% extends "MyAppUserBundle:Visitor:ajout_permis.html.twig" %}
+
+{% block content %}
+    <center>
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+   
+    <h1>Permis</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr height="50">
+                <fieldset class="form-group"><td>
+                        <label> numPermis:</label></td>
+                <td>  <input type="text" class="form-control"  value="{{permis.numPermis}}" disabled="true" ></td>
+             </fieldset></tr>
+            </tr>
+            
+            
+    
+            
+            
+            
+             <tr height="50">
+    <fieldset class="form-group"><td>
+            <label>dateCreationPermis:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{permis.dateCreationPermis|date('Y-m-d')}}" disabled="true" ></td>
+    </fieldset></tr>
+            
+            
+            <tr height="50">
+                <fieldset class="form-group"><td>
+                        <label> Prenom:</label></td>
+                        <td>  <input type="text" class="form-control"  value="{{permis.categoriePermis}}" disabled="true" ></td>
+             </fieldset></tr>
+            </tr>
+            
+            
+            
+            <tr height="50">
+    <fieldset class="form-group"><td>
+            <label>dateValiditePermis:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{permis.dateValiditePermis|date('Y-m-d')}}" disabled="true" ></td>
+    </fieldset></tr>
+            
+            
+         
+            
+            
+            <tr height="50">
+                <fieldset class="form-group"><td>
+                        <label> validation:</label></td>
+                <td>  <input type="text" class="form-control"  value="{{permis.validation}}" disabled="true" ></td>
+             </fieldset></tr>
+            </tr>
+            
+            <tr height="50">
+                <fieldset class="form-group"><td>
+                  <label> nom:</label></td>      
+                <td>  <input type="text" class="form-control"  value="{{user.nom }}" disabled="true" ></td>
+             </fieldset></tr>
+           </tr>
+            
+              <tr height="50">
+                  <fieldset class="form-group"><td>
+                          <label> Prenom:</label></td>
+                      <td>  <input type="text" class="form-control"  value="{{user.prenom}}" disabled="true" ></td>
+             </fieldset></tr>
+            </tr>
+            
+              
+            
+            
+            
+            
+            
+            
+             
+            
+              <tr height="50">
+                  <fieldset class="form-group"><td>
+                          <label> Email:</label></td>
+                         <td>  <input type="text" class="form-control"  value="{{user.email}}" disabled="true" ></td>
+             </fieldset></tr>
+                
+             <tr><td></td><td><br><a class="btn btn-primary" href="{{ path('liste_permis') }}">
+                         liste permis</a></td></tr>
+           
+        </tbody>
+    </table>
+
+       
+{% endblock %}
+
+</center>
+{% endblock %}

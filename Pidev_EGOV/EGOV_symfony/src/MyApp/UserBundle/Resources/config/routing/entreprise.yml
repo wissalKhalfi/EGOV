@@ -1,0 +1,30 @@
+entreprise:
+    path:     /
+    defaults: { _controller: "MyAppUserBundle:Entreprise:index" }
+
+entreprise_show:
+    path:     /{id}/show
+    defaults: { _controller: "MyAppUserBundle:Entreprise:show" }
+
+entreprise_new:
+    path:     /new
+    defaults: { _controller: "MyAppUserBundle:Entreprise:new" }
+
+entreprise_create:
+    path:     /create
+    defaults: { _controller: "MyAppUserBundle:Entreprise:create" }
+    methods:  POST
+
+entreprise_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MyAppUserBundle:Entreprise:edit" }
+
+entreprise_update:
+    path:     /{id}/update
+    defaults: { _controller: "MyAppUserBundle:Entreprise:update" }
+    methods:  [POST, PUT]
+
+entreprise_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MyAppUserBundle:Entreprise:delete" }
+    methods:  [POST, DELETE]

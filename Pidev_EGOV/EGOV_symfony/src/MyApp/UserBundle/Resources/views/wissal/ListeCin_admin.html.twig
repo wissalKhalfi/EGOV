@@ -1,0 +1,68 @@
+{% extends 'MyAppUserBundle:wissal:baseWissal.html.twig' %}
+
+{% block content %}
+<section id="headline">
+    <div class="container  text-center">
+        <h3>Gestion des cartes d'identités nationales</h3>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container ">
+        <div class="col-lg-12 __web-inspector-hide-shortcut__">
+            <section class="panel">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2><strong>Liste des CIN</strong></h2>
+                    </header>
+
+                    <div class="panel-body">
+                        <form name="form_rech">
+                        <label  class="text-center">Nom:</label>
+                         <input type="text" name="nom_rech">
+                        <button><a href="{{ path ("cin_recherche", {nom:"wiss"})}}">Rechercher</a></button>
+                        </form>
+                            <table class="table table-striped" id="table-example">
+                                <thead>
+                                    <tr>
+
+                                        <th class="text-center">Id demande</th>		
+                                        <th  class="text-center">Nom</th>
+                                        <th class="text-center">Prenom</th>
+                                        <th class="text-center">Date de naissance</th>
+                                        <th class="text-center">Adresse</th>
+                                        <th class="text-center">Sexe</th>
+                                        <td> Valider       &nbsp;&nbsp;&nbsp;&nbsp; </td>
+
+                                    </tr>
+                                </thead>
+                                <tbody align="center">
+                                    {% for e in demandesCin %}
+                                        <tr>
+                                            <td>{{e.iduti}} </td>
+                                            <td> {{e.nom}} </td>
+                                            <td> {{e.prenom}} </td>
+                                            <td> {{e.dateNaissance|date('Y-m-d')}} </td>
+                                            <td> {{e.adresse}} </td>
+                                            <td> {{e.sexe}} </td>
+                                            <td><a href="{{ path ("cin_show", {id:e.iduti})}} ">Afficher</a></td>
+                                        </tr> 
+                                    {% endfor %}         
+                                </tbody>
+                            </table>
+                      
+                    </div>
+                </section>
+
+            </section>
+
+
+
+
+
+
+
+        </div>		
+    </div>
+</section>
+                                {% endblock %}

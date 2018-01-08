@@ -1,0 +1,13 @@
+diplome_ajout:
+    path:     /ajout
+    defaults: { _controller: "MyAppUserBundle:Diplome:ajout" }
+
+diplome_afficher:
+    path:     /afficher
+    defaults: { _controller: "MyAppUserBundle:Diplome:afficher" }
+
+diplome_modifier:
+    path:     /{id}/modifier
+    defaults: { _controller: "MyAppUserBundle:Diplome:modifier" }
+
+

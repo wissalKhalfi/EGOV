@@ -1,0 +1,71 @@
+{% extends 'MyAppUserBundle:wissal:baseWissal.html.twig' %}
+
+{% block content %}
+    <section id="headline">
+        <div class="container  text-center">
+            <h3>Extraits de naissance</h3>
+        </div>
+    </section>
+    <section class="panel">
+        <header class="panel-heading">
+            <h2><strong>Extrait naissance  </strong></h2>
+        </header>
+
+        <div class="panel-body">
+
+            <table class="table table-striped" id="table-example">
+                <thead>
+
+
+                    <tr>
+                        <th  class="text-center">Nom</th>
+                        <td> {{en.nom}} </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center">Prenom</th>
+                        <td> {{en.prenom}} </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center">Date de naissance</th>
+                        <td> {{en.dateNaissance|date('Y-m-d')}} </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center">Sexe</th>
+                        <td> {{en.sexe}} </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center">Prenom pere </th>
+                        <td> {{en.prenomPere}} </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center">Nom pere</th>
+                        <td> {{en.nomPere}} </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center">Prenom mère</th>
+                        <td> {{en.prenomMere}} </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center">Nom mère</th>
+                        <td> {{en.nomMere}} </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center">Sexe</th>
+                        <td> {{en.sexe}} </td>
+                    </tr>
+
+
+
+                </thead>
+
+
+            </table>
+                    <center>
+            <button class="btn" type="button" type="submit" value="Refuser">
+                <a href="{{ path ("ExtraitNaiss_impression", {id:en.iduti})}}">Imprimer </a>
+            </button>
+            </center>
+        </div>
+    </section>
+
+{% endblock %}

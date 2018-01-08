@@ -1,0 +1,63 @@
+<?php
+
+namespace MyApp\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Passeport
+ *
+ * @ORM\Table(name="passeport", uniqueConstraints={@ORM\UniqueConstraint(name="num_passeport", columns={"numPasseport"})}, indexes={@ORM\Index(name="numCinUtilisateur", columns={"numCinUtilisateur"})})
+ * @ORM\Entity
+ */
+class Passeport
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateDelivrance", type="date", nullable=false)
+     */
+    private $datedelivrance;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateValidite", type="date", nullable=false)
+     */
+    private $datevalidite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="couleurYeux", type="string", length=10, nullable=true)
+     */
+    private $couleuryeux;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="validation", type="string", length=10, nullable=true)
+     */
+    private $validation;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numPasseport", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $numpasseport;
+
+    /**
+     * @var \MyApp\UserBundle\Entity\Utilisateur
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\Utilisateur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="numCinUtilisateur", referencedColumnName="id_uti")
+     * })
+     */
+    private $numcinutilisateur;
+
+
+}

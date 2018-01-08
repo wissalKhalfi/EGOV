@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>CarteEdinar</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Numcarte</th>
+                <td>{{ entity.numCarte }}</td>
+            </tr>
+            <tr>
+                <th>Codecarte</th>
+                <td>{{ entity.codeCarte }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('carteedinar') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('carteedinar_edit', { 'id': entity.numCarte }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

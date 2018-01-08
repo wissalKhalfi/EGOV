@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Ccp</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Soldeactuel</th>
+                <td>{{ entity.soldeActuel }}</td>
+            </tr>
+            <tr>
+                <th>Datedernierretirement</th>
+                <td>{{ entity.dateDernierRetirement|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Dernierretirement</th>
+                <td>{{ entity.dernierRetirement }}</td>
+            </tr>
+            <tr>
+                <th>Datecreation</th>
+                <td>{{ entity.dateCreation|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Datedernierversement</th>
+                <td>{{ entity.dateDernierVersement|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Dernierversement</th>
+                <td>{{ entity.dernierVersement }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('ccp') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('ccp_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

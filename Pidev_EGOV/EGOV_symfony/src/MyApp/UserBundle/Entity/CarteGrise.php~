@@ -1,0 +1,78 @@
+<?php
+
+namespace MyApp\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * CarteGrise
+ *
+ * @ORM\Table(name="carte_grise")
+ * @ORM\Entity
+ */
+class CarteGrise
+{
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_carte_grise", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCarteGrise;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="marque_vehicule", type="string", length=20, nullable=false)
+     */
+    private $marqueVehicule;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="num_serie_vehicule", type="string", length=9, nullable=false)
+     */
+    private $numSerieVehicule;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_vehicule", type="string", length=20, nullable=false)
+     */
+    private $typeVehicule;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_achat_vehicule", type="date", nullable=false)
+     */
+    private $dateAchatVehicule;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="couleur_vehicue", type="string", length=20, nullable=false)
+     */
+    private $couleurVehicue;
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="validation", type="string", length=10, nullable=true)
+     */
+    private $validation;
+    
+    
+    
+    /**
+    * @ORM\ManyToOne(targetEntity="User", inversedBy="carteGrise" )
+    * @ORM\JoinColumn(name="num_cinUtilisateur", referencedColumnName="id")
+    */
+    private $utilisateur;
+
+
+   
+
+  
+}

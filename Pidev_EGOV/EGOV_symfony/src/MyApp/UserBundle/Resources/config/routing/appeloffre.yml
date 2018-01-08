@@ -1,0 +1,44 @@
+appeloffre:
+    path:     /
+    defaults: { _controller: "MyAppUserBundle:AppelOffre:index" }
+
+appeloffre_show:
+    path:     /{id}/show
+    defaults: { _controller: "MyAppUserBundle:AppelOffre:show" }
+appeloffre_show1:
+    path:     /{id}/show1
+    defaults: { _controller: "MyAppUserBundle:AppelOffre:show1" }
+appeloffre_new:
+    path:     /new
+    defaults: { _controller: "MyAppUserBundle:AppelOffre:new" }
+
+appeloffre_create:
+    path:     /create
+    defaults: { _controller: "MyAppUserBundle:AppelOffre:create" }
+    methods:  POST
+
+appeloffre_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MyAppUserBundle:AppelOffre:edit" }
+
+appeloffre_update:
+    path:     /{id}/update
+    defaults: { _controller: "MyAppUserBundle:AppelOffre:update" }
+    methods:  [POST, PUT]
+
+appeloffre_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MyAppUserBundle:AppelOffre:delete" }
+    methods:  [POST, DELETE]
+    
+postuler:
+    path : /postuler/{identreprise}
+    defaults : { _controller: "MyAppUserBundle:AppelOffre:postuler" }
+
+appeloffre_rech:
+    path:   /recherche
+    defaults:  { _controller: "MyAppUserBundle:AppelOffre:recherche" }
+
+e-job:
+    path : /e-job
+    defaults : { _controller: "MyAppUserBundle:User:ejob" }

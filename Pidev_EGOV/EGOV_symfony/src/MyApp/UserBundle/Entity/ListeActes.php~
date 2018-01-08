@@ -1,0 +1,45 @@
+<?php
+
+namespace MyApp\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ListeActes
+ *
+ * @ORM\Table(name="liste_actes", indexes={@ORM\Index(name="citoyen", columns={"citoyen"}), @ORM\Index(name="acte", columns={"acte"})})
+ * @ORM\Entity
+ */
+class ListeActes
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \MyApp\UserBundle\Entity\Utilisateur
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\Utilisateur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="citoyen", referencedColumnName="num_cin")
+     * })
+     */
+    private $citoyen;
+
+    /**
+     * @var \MyApp\UserBundle\Entity\ActesJuridiques
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\ActesJuridiques")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="acte", referencedColumnName="id_acte")
+     * })
+     */
+    private $acte;
+
+
+}

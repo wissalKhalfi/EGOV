@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="634.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testfb.LogINController">
+   <children>
+      <WebView fx:id="webview" layoutX="68.0" layoutY="52.0" prefHeight="452.0" prefWidth="678.0" />
+      <Button layoutX="294.0" layoutY="556.0" mnemonicParsing="false" onAction="#close" prefHeight="36.0" prefWidth="163.0" text="close" />
+   </children>
+</AnchorPane>

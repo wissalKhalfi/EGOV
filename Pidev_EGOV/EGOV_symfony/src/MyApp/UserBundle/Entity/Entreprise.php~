@@ -1,0 +1,53 @@
+<?php
+
+namespace MyApp\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Entreprise
+ *
+ * @ORM\Table(name="entreprise")
+ * @ORM\Entity
+ */
+class Entreprise
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=200, nullable=true)
+     */
+    private $adresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=200, nullable=true)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=200, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pwd_entreprise", type="string", length=50, nullable=false)
+     */
+    private $pwdEntreprise;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="code_fiscal", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $codeFiscal;
+
+
+}

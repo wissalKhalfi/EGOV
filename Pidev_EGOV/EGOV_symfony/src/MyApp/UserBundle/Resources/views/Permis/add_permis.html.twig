@@ -1,0 +1,106 @@
+{% extends "MyAppUserBundle:Visitor:ajout_permis.html.twig" %}
+
+{% block content %}
+
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
+    {%if app.user%}
+        {%if app.user.permis%} <center style= "color:red"> <B>Attention {{app.user.nom}} a déja un permis !</B> <br><br><a class="btn btn-primary" href="{{ path('liste_permis') }}">
+                        retourner à la liste permis</a></center>{%else%}
+            <center>
+    <h4>Ajouter Permis</h4>
+    <form action="{{path('add_permis')}}" method="POST"> 
+
+
+        <table>   
+            <tr height="50">
+
+
+            <div class="col-sm-4">                     
+                <td> <label for="exampleSelect1">categories Permis</label></td>
+                <td>{{ form_widget(form.categoriePermis, {'attr': {'class':'form-control'}}) }}</td>
+
+
+            </div>  
+        </tr><tr height="50">
+
+    <div class="col-sm-4">
+
+        <td>  <label>Date Creation Permis</label></td>
+        <td>     <div class='input-group date' id='datetimepicker1'>
+                {{ form_widget(form.dateCreationPermis, {'attr': {'class':'form-control'}}) }}
+
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </td>
+    </div>
+
+    </tr>
+
+
+    <tr height="50">
+    <div class="col-sm-4">
+        <td><label>Date Validation Permis</label></td>
+        <td><div class='input-group date' id='datetimepicker1'>
+                {{ form_widget(form.dateValiditePermis, {'attr': {'class':'form-control'}}) }}
+
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div></td>
+    </div></tr>
+
+
+
+</table>   
+<table>
+    
+    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label> Nom:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.nom}}" disabled="true" ></td>
+    </fieldset></tr>    
+
+    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label> Prenom:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.prenom}}" disabled="true" ></td>
+    </fieldset></tr>  
+
+    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label>User name:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.username}}" disabled="true" ></td>
+    </fieldset></tr>  
+   </table>  
+
+
+
+
+
+
+
+<input type="hidden" id="egov_userbundle_permis__token" name="egov_userbundle_permis[_token]" value="{{ csrf_token('egov_userbundle_permis') }}" /> 
+
+
+
+
+<button class="btn btn-primary" type="submit">Ajouter</button>
+</form>
+
+</div>
+</center>
+                {%endif%}
+{%else%}
+    <br><br><br>
+  
+                  
+    <a  href="{{ path('fos_user_security_login') }}"> <center style= "color:red"> <B>connectez vous s'il vous plait avant !</B></center></a>
+    {%endif%}
+    
+{% endblock %}

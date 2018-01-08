@@ -1,0 +1,43 @@
+candidature:
+    path:     /
+    defaults: { _controller: "MyAppUserBundle:Candidature:index" }
+
+candidature_show:
+    path:     /{id}/show
+    defaults: { _controller: "MyAppUserBundle:Candidature:show" }
+
+candidature_new:
+    path:     /new
+    defaults: { _controller: "MyAppUserBundle:Candidature:new" }
+
+candidature_create:
+    path:     /create
+    defaults: { _controller: "MyAppUserBundle:Candidature:create" }
+    methods:  POST
+
+candidature_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MyAppUserBundle:Candidature:edit" }
+
+candidature_update:
+    path:     /{id}/update
+    defaults: { _controller: "MyAppUserBundle:Candidature:update" }
+    methods:  [POST, PUT]
+
+candidature_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MyAppUserBundle:Candidature:delete" }
+    methods:  [POST, DELETE]
+    
+candidature_accepter:
+    path:   /accepter/{id}
+    defaults:  { _controller: "MyAppUserBundle:Candidature:accepter" }
+    
+candidature_refuser:
+    path:   /refuser/{id}
+    defaults:  { _controller: "MyAppUserBundle:Candidature:refuser" }
+    
+candidature_rech:
+    path:   /recherche
+    defaults:  { _controller: "MyAppUserBundle:Candidature:recherche" }
+

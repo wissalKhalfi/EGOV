@@ -1,0 +1,63 @@
+<?php
+
+namespace MyApp\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Contratmariage
+ *
+ * @ORM\Table(name="contratmariage", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_A4262E4D65FBE7C7", columns={"numCinUtilisateur"})})
+ * @ORM\Entity
+ */
+class Contratmariage
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_mariage", type="date", nullable=false)
+     */
+    private $dateMariage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="id_epoux", type="string", length=10, nullable=true)
+     */
+    private $idEpoux;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="id_epouse", type="string", length=10, nullable=true)
+     */
+    private $idEpouse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="validation", type="string", length=10, nullable=true)
+     */
+    private $validation;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_contrat", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idContrat;
+
+    /**
+     * @var \MyApp\UserBundle\Entity\Utilisateur
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\Utilisateur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="numCinUtilisateur", referencedColumnName="id_uti")
+     * })
+     */
+    private $numcinutilisateur;
+
+
+}

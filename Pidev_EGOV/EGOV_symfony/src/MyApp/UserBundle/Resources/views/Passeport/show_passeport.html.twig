@@ -1,0 +1,77 @@
+{% extends "EGOVVisitorBundle:Visitor:affiche_passeport.html.twig" %}
+
+{% block content %}
+    {% block body -%}
+        <div class="container  text-center">
+            <h1>Passeport</h1>
+        </div>
+
+        <section class="section">
+            <div class="container ">
+                <table class="table">
+                    <thead>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                        <th>le numéro de passeport</th>
+                        <td>{{ passeport.numPasseport }}</td>
+                        </tr>
+                        <tr>
+                        <th>la date de délivrance :</th>
+                        <td>{{ passeport.dateDelivrance|date('Y-m-d') }}</td>
+                        </tr>
+                        <tr>
+                        <th>id epoux</th>
+                        <td>{{ passeport.dateValidite|date('Y-m-d')  }}</td>
+                        </tr>
+                        <tr>
+                        <th>id epouse</th>
+                        <td>{{ passeport.couleurYeux }}</td>
+                        </tr>
+                        <tr>
+                        <th>validation</th>
+                        <td>{{ passeport.validation }}</td>
+                        </tr>
+
+                        <tr>
+                        <th>nom</th>
+                        <td>{% if p.utilisateur.nom is defined %}
+                            {{ p.utilisateur.nom }}
+                            {% endif %}</td>
+                            </tr>
+
+                            <tr>
+                            <th>prenom</th>
+                            <td>{{ user.prenom }}</td>
+                            </tr>
+
+                            <tr>
+                            <th>date de naissance</th>
+                            <td>{{ user.dateNaissance|date('Y-m-d') }}</td>
+                            </tr>
+
+                            <tr>
+                            <th>lieu de naissance</th>
+                            <td>{{ user.lieuNaissance }}</td>
+                            </tr>
+
+                            <tr>
+                            <th>adresse</th>
+                            <td>{{ user.adresse }}</td>
+                            </tr>
+
+                            <tr>
+                            <th>num cin </th>
+                            <td>{{ user.numCin }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <a class="btn btn-sm btn-default edit_link" href="{{ path('edit_passeport_user') }}"><i
+                            class="fa fa-download"></i>edit</a>
+
+
+                    {% endblock %}
+                        {% endblock %}

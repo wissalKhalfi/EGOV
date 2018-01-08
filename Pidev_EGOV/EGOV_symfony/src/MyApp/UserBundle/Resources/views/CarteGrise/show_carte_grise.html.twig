@@ -1,0 +1,106 @@
+{% extends "MyAppUserBundle:Visitor:ajout_carte_grise.html.twig" %}
+
+{% block content %}
+    <center>
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <h1>Carte Grise </h1>
+
+    <table class="record_properties">
+        <tbody>
+            
+            <tr height="50">
+                <fieldset class="form-group"><td>
+                        <label> marqueVehicule:</label></td>
+                <td>  <input type="text" class="form-control"  value="{{carte.marqueVehicule}}" disabled="true" ></td>
+             </fieldset></tr>
+            </tr>
+            
+            
+    
+  
+            
+            <tr height="50">
+                <fieldset class="form-group"><td>
+                        <label> numSerieVehicule:</label></td>
+                        <td>  <input type="text" class="form-control"  value="{{carte.numSerieVehicule}}" disabled="true" ></td>
+             </fieldset></tr>
+            </tr>
+            
+            
+         
+            
+            <tr height="50">
+                <fieldset class="form-group"><td>
+                        <label> typeVehicule:</label></td>
+                <td>  <input type="text" class="form-control"  value="{{carte.typeVehicule}}" disabled="true" ></td>
+             </fieldset></tr>
+            </tr>
+            
+            
+                    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label>dateAchatVehicule:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{carte.dateAchatVehicule|date('Y-m-d')}}" disabled="true" ></td>
+    </fieldset></tr>
+    
+    
+    
+    
+         <tr height="50">
+                <fieldset class="form-group"><td>
+                        <label> marqueVehicule:</label></td>
+                <td>  <input type="text" class="form-control"  value="{{carte.marqueVehicule}}" disabled="true" ></td>
+             </fieldset></tr>
+            </tr>
+            
+    
+            
+            <tr height="50">
+                <fieldset class="form-group"><td>
+                  <label> couleurVehicue:</label></td>      
+                <td>  <input type="text" class="form-control"  value="{{carte.couleurVehicue }}" disabled="true" ></td>
+             </fieldset></tr>
+           </tr>
+            
+              <tr height="50">
+                  <fieldset class="form-group"><td>
+                          <label> Prenom:</label></td>
+                      <td>  <input type="text" class="form-control"  value="{{user.prenom}}" disabled="true" ></td>
+             </fieldset></tr>
+            </tr>
+            
+              
+            
+            
+            
+         
+            
+            
+            
+              
+            </tr>
+            
+              <tr height="50">
+                  <fieldset class="form-group"><td>
+                          <label> Email:</label></td>
+                         <td>  <input type="text" class="form-control"  value="{{user.email}}" disabled="true" ></td>
+             </fieldset></tr>
+                
+            <tr><td></td><td><br><a class="btn btn-primary" href="{{ path('liste_carte_grise') }}">
+                         liste cartes grises</a></td></tr>
+        </tbody>
+    </table>
+
+       
+{% endblock %}
+</center>
+{% endblock %}

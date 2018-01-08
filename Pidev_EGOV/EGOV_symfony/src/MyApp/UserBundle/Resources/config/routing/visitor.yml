@@ -1,0 +1,100 @@
+visitor:
+    path:     /index
+    defaults: { _controller: "MyAppUserBundle:Visitor:index" }
+    
+visitor_abouttn:
+    path:     /abouttn
+    defaults: { _controller: "MyAppUserBundle:Visitor:abouttn" } 
+    
+visitor_service:
+    path:     /service
+    defaults: { _controller: "MyAppUserBundle:Visitor:service" }
+    
+visitor_estudent:
+    path:     /e-student
+    defaults: { _controller: "MyAppUserBundle:Visitor:estudent" }
+    
+visitor_eroute:
+    path:     /eroute
+    defaults: { _controller: "MyAppUserBundle:Visitor:eroute" }
+    
+visitor_ecitoyennite:
+    path:     /e-citoyennite
+    defaults: { _controller: "MyAppUserBundle:Visitor:ecitoyennite" }
+    
+visitor_ecitoyenniteplus:
+    path:     /e-citoyennite+
+    defaults: { _controller: "MyAppUserBundle:Visitor:ecitoyenniteplus" }
+    
+visitor_contact:
+    path:     /contact
+    defaults: { _controller: "MyAppUserBundle:Visitor:contact" }
+
+visitor_news:
+    path:     /news
+    defaults: { _controller: "MyAppUserBundle:Visitor:news" }
+    
+visitor_ejob:
+    path:     /e-job
+    defaults: { _controller: "MyAppUserBundle:Visitor:ejob" }
+    
+visitor_signin:
+    path:     /log
+    defaults: { _controller: "MyAppUserBundle:Visitor:signin" }
+    
+visitor_signup:
+    path:     /signup
+    defaults: { _controller: "MyAppUserBundle:Visitor:signup" }
+
+visitor_menu_permis:
+    path:     /menu_permis
+    defaults: { _controller: "MyAppUserBundle:Visitor:menu_permis" }
+
+visitor_menu_carte_grise:
+    path:     /menu_carte_grise
+    defaults: { _controller: "MyAppUserBundle:Visitor:menu_carte_grise" }
+    
+visitor_menu_attestation_residence:
+    path:     /menu_attestation_residence
+    defaults: { _controller: "MyAppUserBundle:Visitor:menu_attestation_residence" }
+    
+visitor_ajout_permis:
+    path:     /ajout_permis
+    defaults: { _controller: "MyAppUserBundle:Visitor:ajout_permis" }
+
+visitor_ajout_carte_grise:
+    path:     /ajout_carte_grise
+    defaults: { _controller: "MyAppUserBundle:Visitor:ajout_carte_grise" }
+    
+visitor_ajout_attestation_residence:
+    path:     /ajout_attestation_residence
+    defaults: { _controller: "MyAppUserBundle:Visitor:ajout_attestation_residence" }
+    
+visitor_edit_permis:
+    path:     /edit_permis
+    defaults: { _controller: "MyAppUserBundle:Visitor:edit_permis" }
+
+visitor_edit_carte_grise:
+    path:     /edit_carte_grise
+    defaults: { _controller: "MyAppUserBundle:Visitor:edit_carte_grise" }
+    
+visitor_edit_attestation_residence:
+    path:     /edit_attestation_residence
+    defaults: { _controller: "MyAppUserBundle:Visitor:edit_attestation_residence" }
+visitor_affiche_permis:
+    path:     /affiche_permis
+    defaults: { _controller: "MyAppUserBundle:Visitor:affiche_permis" }
+
+visitor_affiche_carte_grise:
+    path:     /affiche_carte_grise
+    defaults: { _controller: "MyAppUserBundle:Visitor:affiche_carte_grise" }
+    
+visitor_affiche_attestation_residence:
+    path:     /affiche_attestation_residence
+    defaults: { _controller: "MyAppUserBundle:Visitor:affiche_attestation_residence" }
+ 
+
+visitor_eroute:
+    path:     /eroute
+    defaults: { _controller: "MyAppUserBundle:Visitor:eroute" }
+    

@@ -1,0 +1,121 @@
+my_app_user_utilisateur:
+    resource: "@MyAppUserBundle/Resources/config/routing/utilisateur.yml"
+    prefix:   /utilisateur
+
+my_app_user_entreprise:
+    resource: "@MyAppUserBundle/Resources/config/routing/entreprise.yml"
+    prefix:   /entreprise
+    
+my_app_user_candidature:
+    resource: "@MyAppUserBundle/Resources/config/routing/candidature.yml"
+    prefix:   /candidature
+
+my_app_user_appeloffre:
+    resource: "@MyAppUserBundle/Resources/config/routing/appeloffre.yml"
+    prefix:   /appeloffre
+
+user:
+    resource: "@MyAppUserBundle/Resources/config/user/user.yml"
+    prefix:   /
+    
+entreprises:
+    resource: "@MyAppUserBundle/Resources/config/entreprises/entreprises.yml"
+    prefix:   /
+
+admin:
+    resource: "@MyAppUserBundle/Resources/config/routing/Admin.yml"
+    prefix:   /
+    
+
+adminVisitor:
+    resource: "@MyAppUserBundle/Resources/config/routing/visitor.yml"
+    prefix:   /adminVisitor
+
+
+add_permis:
+    path:     /add_permis 
+    defaults: { _controller: MyAppUserBundle:Permis:add_permis}
+    
+permispdf:
+    path:     /permispdf 
+    defaults: { _controller: MyAppUserBundle:Permis:permisPdf}
+    
+
+    
+add_carte_grise:
+    path:     /add_carte_grise
+    defaults: { _controller: MyAppUserBundle:CarteGrise:add_carte_grise}
+    
+show_carte_grise:
+    path:     /show_carte_grise
+    defaults: { _controller: MyAppUserBundle:CarteGrise:show_carte_grise}
+    
+edit_carte_grise:
+    path:     /edit_carte_grise
+    defaults: { _controller: MyAppUserBundle:CarteGrise:edit_carte_grise}
+    
+show_permis:
+    path:     /show_permis   
+    defaults: { _controller: MyAppUserBundle:Permis:show_permis}
+
+menu_permis1:
+    path:     /menu_permis1
+    defaults: { _controller: MyAppUserBundle:Permis:menu}   
+liste_permis:
+    path:     /liste_permis
+    defaults: { _controller: MyAppUserBundle:AdminPc:liste_permis}
+    
+liste_carte_grise:
+    path:     /liste_carte_grise
+    defaults: { _controller: MyAppUserBundle:AdminCG:liste_carte_grise}
+    
+    
+show_carte_grise_admin:
+    path:     /show_carte_grise_admin/{idCarteGrise} 
+    defaults: { _controller: MyAppUserBundle:AdminCG:show_carte_grise_admin}
+
+show_permis_admin:
+    path:     /show_permis/{numPermis}
+    defaults: { _controller: MyAppUserBundle:AdminPc:show_permis}
+    
+valider_permis:
+    path:     /valider_permis/{numPermis}
+    defaults: { _controller: MyAppUserBundle:AdminPc:valider_permis}
+
+
+valider_carte:
+    path:     /valider_carte/{idCarteGrise}
+    defaults: { _controller: MyAppUserBundle:AdminCG:valider_carte}
+     
+supprimer_permis:
+    path:     /supprimer_permis/{numPermis}
+    defaults: { _controller: MyAppUserBundle:AdminPc:supprimer_permis}
+    
+   
+supprimer_carte_grise:
+    path:     /supprimer_carte_grise/{idCarteGrise}
+    defaults: { _controller: MyAppUserBundle:AdminCG:supprimer_carte_grise}
+     
+edit_permis_user:
+    path:     /edit_permis_user
+    defaults: { _controller: MyAppUserBundle:Permis:edit_permis_user}
+
+permis_rech:
+    pattern:  /rech
+    defaults: { _controller: "MyAppUserBundle:AdminPc:rech" }
+    
+
+carte_rech:
+    pattern:  /carte_rech
+    defaults: { _controller: "MyAppUserBundle:AdminCG:rech" }
+    
+    
+    
+    
+add_user:
+    pattern:  /add_user
+    defaults: { _controller: MyAppUserBundle:User:add_user }
+    
+show_user:
+    pattern:  /show_user
+    defaults: { _controller: MyAppUserBundle:User:show_user }

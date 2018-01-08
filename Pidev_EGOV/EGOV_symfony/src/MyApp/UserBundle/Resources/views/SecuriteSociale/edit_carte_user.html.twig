@@ -1,0 +1,282 @@
+{#{% extends "EGOVVisitorBundle:Visitor:modif_passeport.html.twig" %}#}
+
+{% block content %}
+{% block javascripts %}
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
+{% endblock %}
+
+
+{% block body -%}
+
+    <h4>Modifier la carte</h4>
+    
+    
+        <form action="{{path('edit_carte_user')}}" method="POST"> 
+
+
+        <table>   
+            <tr>
+
+
+            <div class="col-sm-4">                     
+                <td> <label for="exampleSelect1">le proprietaire</label></td>
+                <td>{{ form_widget(form.proprietaire, {'attr': {'class':'form-control'}}) }}</td>
+
+
+            </div>  
+        </tr>
+          <tr height="50">
+
+
+            <div class="col-sm-4">                     
+                <td> <label for="exampleSelect1">le conjoint</label></td>
+                <td>{{ form_widget(form.conjoint, {'attr': {'class':'form-control'}}) }}</td>
+
+
+            </div>  
+        </tr>
+      <tr height="50">
+
+
+            <div class="col-sm-4">                     
+                <td> <label for="exampleSelect1">le nombre des enfants</label></td>
+                <td>{{ form_widget(form.nbreEnfants, {'attr': {'class':'form-control'}}) }}</td>
+
+
+            </div>  
+        </tr>
+
+
+    <tr height="50">
+    <div class="col-sm-4">
+        <td><label>Date de delivrance</label></td>
+        <td><div class='input-group date' id='datetimepicker1'>
+                {{ form_widget(form.dateDelivrenceCsc, {'attr': {'class':'form-control'}}) }}
+
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div></td>
+    </div></tr>
+    
+    <tr height="50">
+    <div class="col-sm-4">
+        <td><label>Date de validite</label></td>
+        <td><div class='input-group date' id='datetimepicker1'>
+                {{ form_widget(form.dateValiditeCsc, {'attr': {'class':'form-control'}}) }}
+
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div></td>
+    </div></tr>
+  <tr height="50">
+
+
+            <div class="col-sm-4">                     
+                <td> <label for="exampleSelect1">le regime</label></td>
+                <td>{{ form_widget(form.regime, {'attr': {'class':'form-control'}}) }}</td>
+
+
+            </div>  
+        </tr>
+
+
+</table>   
+<table><tr height="50">
+    <fieldset class="form-group"><td>
+            <label> Nom:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.nom}}" disabled="true" ></td>
+    </fieldset></tr>    
+
+    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label> Prenom:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.prenom}}" disabled="true" ></td>
+    </fieldset></tr>  
+
+    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label>Date de naissance:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.dateNaissance|date('Y-m-d')}}" disabled="true" ></td>
+    </fieldset></tr>  
+    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label> Lieu de naissance:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.lieuNaissance}}" disabled="true" ></td>
+    </fieldset></tr>  
+
+    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label> Adresse:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.adresse}}" disabled="true" ></td>
+    </fieldset></tr>  
+    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label> Num cin :</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.numCin}}" disabled="true" ></td>
+    </fieldset></tr></table>  
+
+
+
+
+
+
+
+<input type="hidden" id="egov_userbundle_securitesociale__token" name="egov_userbundle_securitesociale[_token]" value="{{ csrf_token('egov_userbundle_securitesociale') }}" /> 
+
+
+
+
+<button class="btn btn-primary" type="submit">Modifier</button>
+</form>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    {#
+    <form action="{{path('edit_carte_user')}}" method="POST"> 
+
+
+        <table>   
+            <tr height="50">
+
+
+            <div class="col-sm-4">                     
+                <td> <label for="exampleSelect1">la couleur des yeux</label></td>
+                <td>{{ form_widget(form.proprietaire, {'attr': {'class':'form-control'}}) }}</td>
+
+
+            </div>  
+        </tr>
+        <tr height="50">
+
+
+            <div class="col-sm-4">                     
+                <td> <label for="exampleSelect1">la couleur des yeux</label></td>
+                <td>{{ form_widget(form.conjoint, {'attr': {'class':'form-control'}}) }}</td>
+
+
+            </div>  
+        </tr>
+        
+         <tr height="50">
+
+
+            <div class="col-sm-4">                     
+                <td> <label for="exampleSelect1">la couleur des yeux</label></td>
+                <td>{{ form_widget(form.nbreEnfants, {'attr': {'class':'form-control'}}) }}</td>
+
+
+            </div>  
+        </tr>
+        
+        
+        
+        
+        
+        <tr height="50">
+
+    <div class="col-sm-4">
+
+        <td>  <label>la date de delivrance</label></td>
+        <td>     <div class='input-group date' id='datetimepicker1'>
+                {{ form_widget(form.dateDelivrenceCsc, {'attr': {'class':'form-control'}}) }}
+
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </td>
+    </div>
+
+    </tr>
+
+
+    <tr height="50">
+    <div class="col-sm-4">
+        <td><label>Date Validation Passeport</label></td>
+        <td><div class='input-group date' id='datetimepicker1'>
+                {{ form_widget(form.dateValiditeCsc, {'attr': {'class':'form-control'}}) }}
+
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div></td>
+    </div></tr>
+    
+    <tr height="50">
+
+
+            <div class="col-sm-4">                     
+                <td> <label for="exampleSelect1">la couleur des yeux</label></td>
+                <td>{{ form_widget(form.regime, {'attr': {'class':'form-control'}}) }}</td>
+
+
+            </div>  
+        </tr>
+
+
+
+</table>   
+<table><tr height="50">
+    <fieldset class="form-group"><td>
+            <label> Nom:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.nom}}" disabled="true" ></td>
+    </fieldset></tr>    
+
+    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label> Prenom:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.prenom}}" disabled="true" ></td>
+    </fieldset></tr>  
+
+    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label>Date de naissance:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.dateNaissance|date('Y-m-d')}}" disabled="true" ></td>
+    </fieldset></tr>  
+    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label> Lieu de naissance:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.lieuNaissance}}" disabled="true" ></td>
+    </fieldset></tr>  
+
+    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label> Adresse:</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.adresse}}" disabled="true" ></td>
+    </fieldset></tr>  
+    <tr height="50">
+    <fieldset class="form-group"><td>
+            <label> Num cin :</label></td>
+        <td>  <input type="text" class="form-control"  value="{{user.numCin}}" disabled="true" ></td>
+    </fieldset></tr></table>  
+
+
+
+
+
+
+
+<input type="hidden" id="egov_userbundle_securitesociale__token" name="egov_userbundle_securitesociale[_token]" value="{{ csrf_token('egov_userbundle_securitesociale') }}" /> 
+
+
+
+
+<button class="btn btn-primary" type="submit">Valider modification</button>
+</form>
+#}
+
+</div>
+{% endblock %}
+{% endblock %}

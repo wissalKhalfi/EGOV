@@ -1,0 +1,61 @@
+{% extends 'MyAppUserBundle:wissal:baseWissal.html.twig' %}
+
+{% block content %} 
+    <section id="headline">
+        <div class="container  text-center">
+            <h3>Gestion des B3 </h3>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container ">
+            <div class="col-lg-12 __web-inspector-hide-shortcut__">
+                <section class="panel">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            <h2><strong>Liste Actes juridique et condamnés </strong></h2>
+                        </header>
+
+                        <div class="panel-body">
+                            <form>
+                                <table class="table table-striped" id="table-example">
+                                    <thead>
+                                        <tr>
+
+                                            <th class="text-center">Id </th>		
+                                            <th  class="text-center">Id acte</th>
+                                            <th  class="text-center">Titre acte</th> 
+                                            <th class="text-center">Num cin Condamnés  </th>
+                                            <th class="text-center">Nom Condamnés  </th>
+                                            <th class="text-center">PrénomCondamnés  </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody align="center">
+                                        {% for e in actes %}
+                                            <tr>
+                                                <td> {{e.id}} </td>
+                                                <td> {{e.acte.idActe}} </td>
+                                                <td> {{e.acte.titreActe}} </td>
+                                                <td> {{e.citoyen.numCin}} </td>
+                                                <td> {{e.citoyen.nom}} </td>
+                                                <td> {{e.citoyen.prenom}} </td>
+                                            </tr> 
+                                        {% endfor %}         
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                    </section>
+
+                </section>
+
+
+
+
+
+
+
+            </div>		
+        </div>
+    </section>  {% endblock %}

@@ -1,0 +1,64 @@
+{#{% extends "::base.html.twig" %}#}
+{% extends "EGOVVisitorBundle:Visitor:lister_passeport.html.twig" %}
+
+{% block content %}
+    
+    <div class="container">
+    <h1>Passeport</h1>
+
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>numPasseport</th>
+                <td>{{ passeport.numPasseport }}</td>
+            </tr>
+            <tr>
+                <th>date de delivrance</th>
+                <td>{{ passeport.dateDelivrance|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ passeport.couleurYeux }}</td>
+            </tr>
+            <tr>
+                <th>dateValidite</th>
+                <td>{{ passeport.dateValidite|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>validation</th>
+                <td>{{ passeport.validation }}</td>
+            </tr>
+            <tr>
+                <th>nom</th>
+                <td>{{ passeport.utilisateur.nom }}</td>
+            </tr>
+            
+              <tr>
+                <th>prenom</th>
+                <td>{{ passeport.utilisateur.prenom }}</td>
+            </tr>
+            
+              <tr>
+                <th>date de naissance</th>
+                <td>{{ passeport.utilisateur.dateNaissance|date('Y-m-d') }}</td>
+            </tr>
+            
+              <tr>
+                <th>lieu de naissance</th>
+                <td>{{ passeport.utilisateur.lieuNaissance }}</td>
+            </tr>
+            
+              <tr>
+                <th>adresse</th>
+                <td>{{ passeport.utilisateur.adresse }}</td>
+            </tr>
+            
+             <tr>
+                <th>num cin </th>
+                <td>{{ passeport.utilisateur.numCin }}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+       
+{% endblock %}

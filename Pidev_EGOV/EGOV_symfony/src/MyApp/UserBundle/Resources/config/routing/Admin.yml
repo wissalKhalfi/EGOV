@@ -1,0 +1,4 @@
+admin:
+    path:     /admin
+    defaults: { _controller: "MyAppUserBundle:Utilisateur:indexAdmin" }
+  

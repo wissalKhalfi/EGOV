@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Entreprise</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Codefiscal</th>
+                <td>{{ entity.codeFiscal }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ entity.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+            <tr>
+                <th>Pwdentreprise</th>
+                <td>{{ entity.pwdEntreprise }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('entreprise') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('entreprise_edit', { 'id': entity.codeFiscal }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

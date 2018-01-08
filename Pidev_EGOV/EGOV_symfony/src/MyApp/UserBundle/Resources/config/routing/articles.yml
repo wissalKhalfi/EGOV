@@ -1,0 +1,57 @@
+articles_showpost:
+    path:     /showpost
+    defaults: { _controller: "MyAppUserBundle:Articles:showarticleposte" }
+articles_showtunisie:
+    path:     /showtunisie
+    defaults: { _controller: "MyAppUserBundle:Articles:showarticletunisie" }
+articles_showinterieur:
+    path:     /showinterieur
+    defaults: { _controller: "MyAppUserBundle:Articles:showarticleinterieur" }
+articles_showindustrie:
+    path:     /showindustrie
+    defaults: { _controller: "MyAppUserBundle:Articles:showarticleindustrie" }
+    
+articles_showgouvernement:
+    path:     /showgouvernement
+    defaults: { _controller: "MyAppUserBundle:Articles:showarticlegouvernement" }
+articles_showjournaux:
+    path:     /showjournaux
+    defaults: { _controller: "MyAppUserBundle:Articles:showarticlejournaux" }
+my_image_routeproduit: 
+   pattern: /offre/produit/images/{id}
+   defaults: {_controller: "MyAppUserBundle:Articles:photo"}
+articles_showalladmin:
+    path:     /showalladmin
+    defaults: { _controller: "MyAppUserBundle:Articles:affichageadmin" }
+articles_detail:
+    path:     /{id}/detail
+    defaults: { _controller: "MyAppUserBundle:Articles:detailarticle" }
+articles_show:
+    path:     /{id}/show
+    defaults: { _controller: "MyAppUserBundle:Articles:show" }
+articles_chercher:
+    path:     /chercher
+    defaults: { _controller: "MyAppUserBundle:Articles:chercher" }
+articles_nouveau:
+    path:     /nouveau
+    defaults: { _controller: "MyAppUserBundle:Articles:nouveau" }
+diplome_ajout:
+    path:     /ajout
+    defaults: { _controller: "MyAppUserBundle:Articles:ajoutdiplome" }
+diplome_modifier:
+    path:     /{id}/modifier
+    defaults: { _controller: "MyAppUserBundle:Articles:modifierdiplome" }
+diplome_affiche:
+    path:     /afficher
+    defaults: { _controller: "MyAppUserBundle:Articles:afficherdiplome" }
+articles_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MyAppUserBundle:Articles:ModifierArticle" }
+articles_update:
+    path:     /{id}/update
+    defaults: { _controller: "MyAppUserBundle:Articles:update" }
+    methods:  [POST, PUT]
+articles_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MyAppUserBundle:Articles:delete" }
+    methods:  [POST, DELETE, GET]

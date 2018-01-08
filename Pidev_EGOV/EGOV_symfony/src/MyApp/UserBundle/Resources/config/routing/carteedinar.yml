@@ -1,0 +1,77 @@
+carteedinar:
+    path:     /
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:index" }
+    
+carteedinar_acceuil:
+    path:     /acceuil
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:acceuil" }
+carteedinar_infoedinar:
+    path:     /infoedinar
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:infoedinar" }
+carteedinar_reponses:
+    path:     /reponses
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:reponses" }
+carteedinar_recuperation:
+    path:     /recuperation
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:recuperation" }
+carteedinar_reponse:
+    path:     /reponse
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:reponse" }
+carteedinar_blockage:
+    path:     /blockage
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:blockage" }
+carteedinar_formedinar:
+    path:     /formedinar
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:formedinar" }
+carteedinar_authedinar:
+    path:     /authedinar
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:authedinar" }
+carteedinar_authedinar2:
+    path:     /authedinar2
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:authedinar2" }
+carteedinar_admin:
+    path:     /carteedinaradmin
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:carteedinaradmin" }
+carteedinar_show:
+    path:     /{id}/show
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:show" }
+carteedinar_succes:
+    path:     /succes
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:succes" }
+carteedinar_listedemandeajout:
+    path:     /listedemandeajout
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:listedemandeajout" }
+carteedinar_listedemanderenouvellement:
+    path:     /listedemanderenouvellement
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:listedemanderenouvellement" }
+carteedinar_listedemandeblockage:
+    path:     /listedemandeblockage
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:listedemandeblockage" }
+carteedinar_new:
+    path:     /new
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:new" }
+carteedinar_renouvellement:
+    path:     /renouvellement
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:renouvellement" }
+
+carteedinar_create:
+    path:     /create
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:create" }
+    methods:  POST
+
+carteedinar_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:edit" }
+
+carteedinar_update:
+    path:     /{id}/update
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:update" }
+    methods:  [POST, PUT]
+
+carteedinar_supprimer:
+    path:     /{id}/supprimercarte
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:supprimercarte" }
+carteedinar_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MyAppUserBundle:CarteEdinar:delete" }
+

@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: 'C:\wamp11111\www\aya-final\Mouadh_Wissal_Asma_Aya\app/config/routing_dev.yml'

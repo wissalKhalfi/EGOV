@@ -1,0 +1,74 @@
+{% extends "EGOVVisitorBundle:Visitor:lister_passeport.html.twig" %}
+
+{% block content %}
+
+
+
+
+    {% block body -%}
+        <div class="container">
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Num cin</th>
+                    <th>Num passeport</th>
+                    <th>Validation</th>
+                    <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if passeport|length != 0 %}
+
+                        {% for p in passeport %}
+
+
+                            <tr>
+                            <td>{% if p.utilisateur.nom is defined %}
+                                {{ p.utilisateur.nom }}
+                                {% endif %}</td>
+                                <td>{% if p.utilisateur.prenom is defined %}
+                                    {{ p.utilisateur.prenom }}
+                                    {% endif %}</td>
+                                    <td>{% if p.utilisateur.numCin is defined %}
+                                        {{ p.utilisateur.numCin }}
+                                        {% endif %}</td>
+                                        <td>{% if p.utilisateur.numPasseport is defined %}
+                                            {{ p.utilisateur.numPasseport }}
+                                            {% endif %}</td>
+                                            <td>{{p.validation}}</td>
+
+                                            <td><a class="btn btn-sm btn-default edit_link" href="{{ path('show_passeport_admin', { 'numPasseport' : p.numPasseport }) }}"><i
+                                                        class="fa fa-book"></i>show</a>
+
+                                                <a class="btn btn-sm btn-default edit_link" href="{{ path('valider_passeport', { 'numPasseport' : p.numPasseport }) }}"><i
+                                                        class="fa fa-check"></i>Valider</a>
+                                                    {% if  p.validation=="non validé" %} 
+
+                                                    <a class="btn btn-sm btn-default edit_link" href="{{ path('supprimer_passeport', { 'numPasseport' : p.numPasseport }) }}"><i
+                                                            class="fa fa-"></i>annuler</a>
+
+                                                {%endif%}
+                                            </td>
+
+
+                                            </tr> 
+                                            {%endfor%}
+                                                {%else%}
+                                                    <tr><td colspan="5" >  Aucun Passeport ! </td><td></td></tr>{%endif%}
+
+
+                                                  
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+
+
+
+
+                                            {% endblock %}
+
+                                                {% endblock %}

@@ -1,0 +1,74 @@
+<?php
+
+namespace MyApp\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * AppelOffre
+ *
+ * @ORM\Table(name="appel_offre", uniqueConstraints={@ORM\UniqueConstraint(name="id_appel", columns={"id_appel"})})
+ * @ORM\Entity
+ */
+class AppelOffre
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="objet", type="text", length=65535, nullable=true)
+     */
+    private $objet;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat", type="string", length=100, nullable=true)
+     */
+    private $etat;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_deb", type="date", nullable=true)
+     */
+    private $dateDeb;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_fin", type="date", nullable=true)
+     */
+    private $dateFin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="localisation", type="string", length=100, nullable=true)
+     */
+    private $localisation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="profil_demande", type="string", length=100, nullable=true)
+     */
+    private $profilDemande;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="entreprise", type="integer", nullable=true)
+     */
+    private $entreprise;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_appel", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAppel;
+
+
+}

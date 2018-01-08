@@ -1,0 +1,107 @@
+{% extends 'MyAppUserBundle:wissal:baseWissal.html.twig' %}
+
+{% block content %} 
+<section id="headline">
+                <div class="container  text-center">
+                    <h3>Bulletin numèro 3</h3>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container ">
+                  <h3>Infos citoyen</h3>
+                    <table class="table table-striped" id="table-example" align="center">
+                        <thead>
+
+                            <tr>
+                                <th  class="text-center">Code cin</th>
+                                <td> {{citoyen.numCin}} </td>
+                            </tr>
+                            <tr>
+                                <th  class="text-center">Nom</th>
+                                <td> {{citoyen.nom}} </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Prenom</th>
+                                <td> {{citoyen.prenom}} </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Date de naissance</th>
+                                <td> {{citoyen.dateNaissance|date('Y-m-d')}} </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Sexe</th>
+                                <td> {{citoyen.sexe}} </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Prenom pere </th>
+                                <td> {{citoyen.prenomPere}} </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Nom pere</th>
+                                <td> {{citoyen.nomPere}} </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Prenom mère</th>
+                                <td> {{citoyen.prenomMere}} </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Nom mère</th>
+                                <td> {{citoyen.nomMere}} </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Sexe</th>
+                                <td> {{citoyen.sexe}} </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Statut social</th>
+                                <td> {{citoyen.statutSocial}} </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Adresse</th>
+                                <td> {{citoyen.adresse}} </td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Profession</th>
+                                <td> {{citoyen.profession}} </td>
+                            </tr>
+
+
+                        </thead>
+
+
+                    </table>
+
+
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h3>Actes juridiques</h3>
+                    <table class="table table-striped" id="table-example">
+                        <thead>
+                            <tr>
+
+                                <th class="text-center">Id acte</th>		
+                                <th  class="text-center">Titre acte</th>
+                                <th class="text-center">Date acte</th>
+                                <th class="text-center">Description de l'acte</th>
+
+                            </tr>
+                        </thead>
+                        <tbody align="center">
+                            {% for e in actes %}
+                                <tr>
+                                    <td>{{e.idActe}} </td>
+                                    <td> {{e.titreActe}} </td>
+                                    <td> {{e.dateActe|date('Y-m-d')}} </td>
+                                    <td> {{e.descActe}} </td>
+                                </tr> 
+                            {% endfor %}         
+                        </tbody>
+                    </table>
+
+                </div>
+          
+{% endblock %}

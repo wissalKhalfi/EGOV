@@ -1,0 +1,64 @@
+{% extends "::base.html.twig" %}
+
+
+
+
+{% block body -%}
+<div class="container">
+          
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Num cin</th>
+         <th>Num passeport</th>
+        <th>Validation</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% if contratmariage|length != 0 %}
+       
+        {% for p in contratmariage %}
+
+      <tr>
+        <td>{% if p.utilisateur.nom is defined %}
+             {{ p.utilisateur.nom }}
+                {% endif %}</td>
+        <td>{% if p.utilisateur.prenom is defined %}
+{{ p.utilisateur.prenom }}
+{% endif %}</td>
+        <td>{% if p.utilisateur.numCin is defined %}
+{{ p.utilisateur.numCin }}
+{% endif %}</td>
+         <td>{% if p.utilisateur.id_contrat is defined %}
+{{ p.utilisateur.id_contrat }}
+{% endif %}</td>
+        <td>{{p.validation}}</td>
+        
+        <td><a class="btn btn-sm btn-default edit_link" href="{{ path('admin_show_contrat', { 'id_contrat' : p.id_contrat }) }}"><i
+                class="fa fa-download"></i>show</a>
+             
+                <a class="btn btn-sm btn-default edit_link" href="{{ path('valider_contrat', { 'id_contrat' : p.id_contrat }) }}"><i
+                class="fa fa-download"></i>Valider</a>
+                {% if  p.validation=="non validé" %} 
+                   
+                <a class="btn btn-sm btn-default edit_link" href="{{ path('supprimer_contrat', { 'id_contrat' : p.id_contrat }) }}"><i
+                class="fa fa-download"></i>annuler</a>
+                
+          {%endif%}
+        </td>
+        
+     
+      </tr> 
+        {%endfor%}
+        {%else%}
+            <tr><td colspan="5" >  Aucun Contrat de mariage ! </td><td></td></tr>{%endif%}
+      
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock %}

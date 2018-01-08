@@ -1,0 +1,234 @@
+<?php
+
+namespace MyApp\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Utilisateur
+ *
+ * @ORM\Table(name="utilisateur", uniqueConstraints={@ORM\UniqueConstraint(name="id_uti", columns={"id_uti"})}, indexes={@ORM\Index(name="CCP", columns={"CCP"}), @ORM\Index(name="listes_actes", columns={"listes_actes"}), @ORM\Index(name="fos_user", columns={"fos_user"}), @ORM\Index(name="num_permis", columns={"num_permis"}), @ORM\Index(name="carte_grise", columns={"carte_grise"}), @ORM\Index(name="num_passeport", columns={"num_passeport"}), @ORM\Index(name="csc", columns={"csc"}), @ORM\Index(name="csc_2", columns={"csc"})})
+ * @ORM\Entity
+ */
+class Utilisateur
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=40, nullable=true)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=40, nullable=true)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=10, nullable=false)
+     */
+    private $type;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_naissance", type="date", nullable=true)
+     */
+    private $dateNaissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lieu_naissance", type="string", length=100, nullable=true)
+     */
+    private $lieuNaissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="statut_social", type="string", length=50, nullable=true)
+     */
+    private $statutSocial;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_pere", type="string", length=100, nullable=true)
+     */
+    private $nomPere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom_pere", type="string", length=100, nullable=true)
+     */
+    private $prenomPere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_mere", type="string", length=100, nullable=true)
+     */
+    private $nomMere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom_mere", type="string", length=100, nullable=true)
+     */
+    private $prenomMere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sexe", type="string", length=10, nullable=true)
+     */
+    private $sexe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=200, nullable=true)
+     */
+    private $adresse;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_delivrence_cin", type="date", nullable=true)
+     */
+    private $dateDelivrenceCin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo", type="blob", nullable=true)
+     */
+    private $photo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="profession", type="string", length=40, nullable=true)
+     */
+    private $profession;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="empreinte", type="blob", nullable=true)
+     */
+    private $empreinte;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="code_empreinte", type="integer", nullable=true)
+     */
+    private $codeEmpreinte;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_agent", type="integer", nullable=true)
+     */
+    private $idAgent;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="listes_actes", type="integer", nullable=true)
+     */
+    private $listesActes;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="validation", type="integer", nullable=true)
+     */
+    private $validation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="num_cin", type="string", length=8)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $numCin;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_uti", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $idUti;
+
+    /**
+     * @var \MyApp\UserBundle\Entity\Passeport
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\Passeport")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="num_passeport", referencedColumnName="numPasseport")
+     * })
+     */
+    private $numPasseport;
+
+    /**
+     * @var \MyApp\UserBundle\Entity\Permis
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\Permis")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="num_permis", referencedColumnName="numPermis")
+     * })
+     */
+    private $numPermis;
+
+    /**
+     * @var \MyApp\UserBundle\Entity\CarteGrise
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\CarteGrise")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="carte_grise", referencedColumnName="id_carte_grise")
+     * })
+     */
+    private $carteGrise;
+
+    /**
+     * @var \MyApp\UserBundle\Entity\SecuriteSociale
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\SecuriteSociale")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="csc", referencedColumnName="id_sc")
+     * })
+     */
+    private $csc;
+
+    /**
+     * @var \MyApp\UserBundle\Entity\FosUser
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\FosUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fos_user", referencedColumnName="id")
+     * })
+     */
+    private $fosUser;
+
+    /**
+     * @var \MyApp\UserBundle\Entity\Ccp
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\Ccp")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="CCP", referencedColumnName="num_ccp")
+     * })
+     */
+    private $ccp;
+
+
+}

@@ -1,0 +1,81 @@
+{% extends "::base.html.twig" %}
+
+{% block body -%}
+    <h1>Passeport</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>numPasseport</th>
+                <td>{{ securitesociale.idSC }}</td>
+            </tr>
+             <tr>
+                <th>Prenom</th>
+                <td>{{ securitesociale.proprietaire }}</td>
+            </tr>
+             <tr>
+                <th>Prenom</th>
+                <td>{{ securitesociale.conjoint }}</td>
+            </tr>
+             <tr>
+                <th>Prenom</th>
+                <td>{{ securitesociale.nbreEnfants }}</td>
+            </tr>
+            <tr>
+                <th>date de delivrance</th>
+                <td>{{ securitesociale.dateDelivrenceCsc|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>date de delivrance</th>
+                <td>{{ securitesociale.dateValiditeCsc|date('Y-m-d') }}</td>
+            </tr>
+             <tr>
+                <th>Prenom</th>
+                <td>{{ securitesociale.regime }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ securitesociale.couleurYeux }}</td>
+            </tr>
+            <tr>
+                <th>dateValidite</th>
+                <td>{{ securitesociale.dateValidite|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>validation</th>
+                <td>{{ securitesociale.validation }}</td>
+            </tr>
+            <tr>
+                <th>nom</th>
+                <td>{{ securitesociale.utilisateur.nom }}</td>
+            </tr>
+            
+              <tr>
+                <th>prenom</th>
+                <td>{{ securitesociale.utilisateur.prenom }}</td>
+            </tr>
+            
+              <tr>
+                <th>date de naissance</th>
+                <td>{{ securitesociale.utilisateur.dateNaissance|date('Y-m-d') }}</td>
+            </tr>
+            
+              <tr>
+                <th>lieu de naissance</th>
+                <td>{{ securitesociale.utilisateur.lieuNaissance }}</td>
+            </tr>
+            
+              <tr>
+                <th>adresse</th>
+                <td>{{ securitesociale.utilisateur.adresse }}</td>
+            </tr>
+            
+             <tr>
+                <th>num cin </th>
+                <td>{{ securitesociale.utilisateur.numCin }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+       
+{% endblock %}

@@ -1,0 +1,82 @@
+citoyen:
+    path:     /index
+    defaults: { _controller: "MyAppUserBundle:User:index" }
+    
+citoyen_abouttn:
+    path:     /abouttn
+    defaults: { _controller: "MyAppUserBundle:User:abouttn" } 
+    
+citoyen_service:
+    path:     /service
+    defaults: { _controller: "MyAppUserBundle:User:service" }
+    
+citoyen_estudent:
+    path:     /e-student
+    defaults: { _controller: "MyAppUserBundle:User:estudent" }
+    
+citoyen_eroute:
+    path:     /e-route
+    defaults: { _controller: "MyAppUserBundle:User:eroute" }
+    
+citoyen_ecitoyennite:
+    path:     /e-citoyennite
+    defaults: { _controller: "MyAppUserBundle:User:ecitoyennite" }
+    
+citoyen_ecitoyenniteplus:
+    path:     /e-citoyennite+
+    defaults: { _controller: "MyAppUserBundle:User:ecitoyenniteplus" }
+    
+citoyen_contact:
+    path:     /contact
+    defaults: { _controller: "MyAppUserBundle:User:contact" }
+    
+citoyen_news:
+    path:     /news
+    defaults: { _controller: "MyAppUserBundle:User:news" }
+    
+citoyen_ejob:
+    path:     /e-job
+    defaults: { _controller: "MyAppUserBundle:User:ejob" }
+
+my_app_mail_succ: 
+    path: /succ 
+    defaults: { _controller: MyAppUserBundle:User:indexmail } 
+
+my_app_mail_form: 
+    path: /mail 
+    defaults: { _controller: MyAppUserBundle:User:new } 
+
+my_app_mail_sendpage:
+    path: /sendmail 
+    defaults: { _controller: MyAppUserBundle:User:sendMail }
+
+citoyen_extrait_naiss:
+    resource: "@MyAppUserBundle/Resources/config/routing/ExtraitNaiss.yml"
+    prefix:   /e-citoyennite/extraitNaiss
+
+citoyen_cin:
+    resource: "@MyAppUserBundle/Resources/config/routing/cin.yml"
+    prefix:   /e-citoyennite/cin
+
+citoyen_b3:
+    resource: "@MyAppUserBundle/Resources/config/routing/B3.yml"
+    prefix:   /e-citoyennite/B3
+    
+carteedinar:
+    resource: "@MyAppUserBundle/Resources/config/routing/carteedinar.yml"
+    prefix:   /carteedinar
+ccp:
+    resource: "@MyAppUserBundle/Resources/config/routing/ccp.yml"
+    prefix:   /ccp
+my_app_user_articles:
+    resource: "@MyAppUserBundle/Resources/config/routing/articles.yml"
+    prefix:   /articles
+
+ecitoyenniteplus:
+    resource: "@MyAppUserBundle/Resources/config/routing/Nihel.yml"
+    prefix:   /GestionEcitoyennitePlus
+    
+
+
+    
+   
